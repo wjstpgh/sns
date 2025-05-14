@@ -10,10 +10,19 @@ import {
 
 @Entity()
 export class UserModel {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({
+    type: 'varchar',
+    name: 'title',
+    length: 300,
+    nullable: true,
+    update: true,
+    select: true,
+    default: 'default value',
+    unique: true,
+  })
   title: string;
 
   @CreateDateColumn()
