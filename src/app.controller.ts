@@ -12,9 +12,7 @@ export class AppController {
 
   @Post('users')
   postUsers() {
-    return this.userRepository.save({
-      title: 'test title',
-    });
+    return this.userRepository.save({});
   }
 
   @Get('users')
